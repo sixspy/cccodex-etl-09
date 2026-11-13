@@ -1,0 +1,12 @@
+{
+  "label": "etl-09",
+  "port": 6080,
+  "login_url": "http://127.0.0.1:6080/login",
+  "http_status": 200,
+  "checks": [
+    "含登录相关文案",
+    "含密码表单线索"
+  ],
+  "passed": true,
+  "checked_at": "2026-11-13T21:07:31+08:00"
+}
