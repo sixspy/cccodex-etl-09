@@ -130,3 +130,78 @@ button.ghost {
 .kv { margin: 0.35rem 0; }
 .kv b { display: inline-block; min-width: 5.5rem; color: var(--muted); font-weight: 600; }
 .empty { color: var(--muted); padding: 1rem 0; }
+
+/* ---- 脱敏总览 / 规则册 / 对照抽样 ---- */
+.overview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 860px) {
+  .overview { grid-template-columns: repeat(2, 1fr); }
+}
+.stat {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.stat-label { color: var(--muted); font-size: 0.8rem; }
+.stat-value { font-size: 1.35rem; font-weight: 700; }
+.stat-value.ok { color: var(--ok); }
+.stat-value.warn { color: var(--warn); }
+.stat-desc { color: var(--muted); font-size: 0.75rem; }
+
+.chips { display: flex; gap: 0.3rem; margin-top: 0.3rem; flex-wrap: wrap; }
+.chip {
+  display: inline-block;
+  padding: 0.05rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  background: #efd3b5;
+}
+.chip.ok { background: #cfe8da; color: var(--ok); }
+.chip.warn { background: #ffe6a8; color: var(--warn); }
+.chip.ext { background: #f5c6b0; color: #8f2e12; }
+.chip.int { background: #e4dcc8; color: #5a5142; }
+
+.panel h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 0.92rem;
+  border-top: 1px dashed var(--line);
+  padding-top: 0.7rem;
+}
+.grid {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+.grid th, .grid td {
+  text-align: left;
+  padding: 0.3rem 0.35rem;
+  border-bottom: 1px solid var(--line);
+}
+.grid th { color: var(--muted); font-weight: 600; }
+.grid td.masked { color: var(--ok); }
+.logs { list-style: none; margin: 0.3rem 0; padding: 0; font-size: 0.8rem; }
+.logs li { padding: 0.2rem 0; border-bottom: 1px dashed var(--line); display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.rule-form { display: grid; grid-template-columns: 1fr 1fr auto auto; gap: 0.4rem; }
+.rule-form input, .rule-form select {
+  margin: 0;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+  min-width: 0;
+}
+@media (max-width: 720px) {
+  .rule-form { grid-template-columns: 1fr 1fr; }
+}
+.rule-row { cursor: default; align-items: center; }
+button.small { padding: 0.2rem 0.6rem; font-size: 0.78rem; }
